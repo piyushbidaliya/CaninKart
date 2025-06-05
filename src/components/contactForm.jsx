@@ -37,9 +37,9 @@ const ContactForm = () => {
     : { backgroundImage: "none" };
 
   return (
-    <section className="py-20 px-4 bg-[#FDFDFD] text-center">
+    <section className="relative top-18 py-10 px-4 bg-[#FDFDFD] text-center">
       <h2 className="text-sm font-semibold text-orange-500 mb-2">🧡 CONTACT</h2>
-      <h3 className="text-lg font-bold mb-6">Contact Us</h3>
+      <h3 className="text-lg font-bold mb-0 md:mb-6">Contact Us</h3>
 
       <div
         className="w-full py-10 md:py-20 px-4 rounded-2xl min-h-[400px] md:min-h-[500px]"

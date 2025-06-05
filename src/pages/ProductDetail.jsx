@@ -19,7 +19,7 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-[#F1FFEF] flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 relative top-18">
         {/* Back Button */}
         <button
-          className="text-sm text-gray-600 hover:text-[16px] absolute top-4 left-8 sm:top-8 sm:left-12 lg:left-25 lg:top-30 z-10"
+          className="text-sm text-gray-600 hover:text-[16px] absolute top-3 left-4 sm:top-8 sm:left-12 lg:left-25 lg:top-30 z-10"
           onClick={() => navigate(-1)}
         >
           &larr; BACK
@@ -28,7 +28,7 @@ const ProductDetail = () => {
         {/* Product Container */}
         <div className="w-full max-w-6xl rounded-lg flex flex-col md:flex-row gap-6 mt-12 sm:mt-16">
           {/* Sidebar Thumbnails */}
-          <div className="flex md:flex-col gap-4 w-20 h-20 sm:w-24 sm:h-24">
+          <div className="flex md:flex-col gap-4 flex-wrap">
             {images.map((img, index) => (
               <img
                 key={index}
@@ -41,7 +41,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Main Image */}
-          <div className="flex justify-center bg-white flex-1/2 h-[430px]">
+          <div className="flex justify-center bg-white flex-1/2 p-4 ">
             <img
               src={selectedImage}
               alt="Main Product"
