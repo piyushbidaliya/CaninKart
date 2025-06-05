@@ -61,10 +61,10 @@ const HomePage = () => {
       text: '"Fantastic service and the cutest products! My puppy is obsessed with the new bed."',
     },
     {
-      name: "Ritika",
-      city: "Bangalore",
-      img: img4,
-      text: '"Great experience shopping here. The toys are durable and safe for my dog."',
+      name: "Sneha",
+      city: "Mumbai",
+      img: img3,
+      text: '"Fantastic service and the cutest products! My puppy is obsessed with the new bed."',
     },
   ]
 
@@ -126,7 +126,7 @@ const HomePage = () => {
       {/* Top Sellers */}
       <section className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 bg-[#E7EDE6] text-center">
         <h2 className="font-semibold mb-4 text-lg text-orange-500">🔥 TOP SELLERS</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-4 max-w-8xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-4 max-w-8xl mx-auto ">
           {/* {Array.from({ length: 8 }).map((_, idx) => {
             const item = topSellers[idx % topSellers.length]
             return (
@@ -146,7 +146,7 @@ const HomePage = () => {
             const name = 'lounge'
             return (
               <div onClick={() => navigate(`/product/${id}`)}
-                  key={idx} className="bg-white px-2 sm:px-4 md:px-4 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md rounded">
+                  key={idx} className="bg-white px-2 sm:px-4 md:px-4 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md  rounded cursor-pointer hover:ring-2 ring-orange-300 transition duration-200">
                 <img
                   src={image || "/placeholder.svg"}
                   alt={name}
@@ -190,7 +190,7 @@ const HomePage = () => {
             const name = 'lounge'
             return (
               <div onClick={() => navigate(`/product/${id}`)}
-                  key={idx} className="bg-white px-2 sm:px-4 md:px-4 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md rounded">
+                  key={idx} className="bg-white px-2 sm:px-4 md:px-4 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md rounded cursor-pointer hover:ring-2 ring-orange-300 transition duration-200">
                 <img
                   src={image || "/placeholder.svg"}
                   alt={name}
@@ -219,13 +219,13 @@ const HomePage = () => {
             </div>
 
       {/* Testimonials with Swiper */}
-      <section className="bg-gray-100 py-10 text-center overflow-hidden">
+      <section className="bg-gray-100 py-10 text-center overflow-hidden ">
         <h2 className="text-sm font-semibold text-orange-500 mb-6">🧡 TESTIMONIALS</h2>
         <h3 className="font-black text-xl mb-6">Trusted by Pet Lovers Everywhere</h3>
 
         {/* Main container with flex layout for buttons and swiper */}
-        <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
-          <div className="relative flex items-center">
+        <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8 ">
+          <div className="relative flex items-center ">
             {/* Left Navigation Button */}
             <button className="swiper-button-prev-custom hidden md:flex items-center justify-center w-12 h-12 bg-white border-2 border-orange-500 rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300 z-10 mr-4 flex-shrink-0">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,9 +234,9 @@ const HomePage = () => {
             </button>
 
             {/* Swiper Container */}
-            <div className="flex-1 overflow-hidden">
+            <div className="flex-1 overflow-hidden border border-red-500 h-full ">
               <Swiper
-                modules={[Pagination, Autoplay, Navigation]}
+                modules={[ Autoplay, Navigation]}
                 spaceBetween={20}
                 pagination={{
                   clickable: true,
@@ -272,13 +272,14 @@ const HomePage = () => {
                     spaceBetween: 30,
                   },
                 }}
-                className="testimonials-swiper !pb-12"
+                className="testimonials-swiper !pb-2"
               >
                 {testimonials.map((item, idx) => (
                   <SwiperSlide key={idx}>
-                    <div className="bg-white p-6 sm:p-8 border rounded-lg shadow-md text-left h-50 flex flex-col justify-between">
+                    <div className="bg-white p-6 sm:p-8 border rounded-lg shadow-md text-left h-50 flex flex-col justify-cen ">
                       <p className="text-sm mb-4 leading-relaxed">{item.text}</p>
-                      <hr className="border-t mb-3" />
+                      <div className="">
+                        <hr className="border-t mb-3" />
                       <div className="flex items-center mt-2 space-x-3 text-xs font-medium">
                         <img
                           src={item.img || "/placeholder.svg"}
@@ -289,6 +290,7 @@ const HomePage = () => {
                           <span className="font-semibold">{item.name}</span>
                           <span className="text-gray-500">{item.city}</span>
                         </div>
+                      </div>
                       </div>
                     </div>
                   </SwiperSlide>
