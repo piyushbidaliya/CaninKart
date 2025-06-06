@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 .swiper-pagination-bullets {
   bottom: 0 !important;
 }
@@ -10,6 +11,7 @@
 .swiper-pagination-bullet-active {
   background: #d64500; /* darker orange */
 }
+
 
 
 

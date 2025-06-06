@@ -20,7 +20,7 @@ import img96 from "../assets/promo.png"
 import img99 from '../assets/doggab.png'
 import ContactForm from "./contactForm"
 import img11 from '../assets/pngwing.png';
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const HomePage = () => {
@@ -212,7 +212,9 @@ const HomePage = () => {
                 <p className="text-sm max-w-md">
                   As a leading manufacturer and exporter of pet accessories, Caninkart has gained a reputation for producing top-notch pet products that cater to the needs of pets of all shapes and sizes. Caninkart has been dedicated to creating innovative and practical pet products that enhance the lives of pets and their owners.
                 </p>
-                <button className="mt-4 bg-red-500 text-white text-xs px-4 py-2 rounded">READ MORE</button>
+                <Link to="/about">
+                   <button className="mt-4 bg-red-500 text-white text-xs px-4 py-2 rounded">READ MORE</button>
+                </Link>
               </div>
             </section>
       
