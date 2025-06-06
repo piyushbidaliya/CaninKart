@@ -30,7 +30,7 @@ const blogs = [
 const Blog = () => {
   return (
     <>
-      <div className="bg-[#EDEBE0] py-8 px-10 mt-16">
+      <div className="bg-[#EDEBE0] py-8 px-10 mt-16 max-w-7xl mx-auto">
         <h2 className="text-center text-xl font-bold mb-6">Our Blog</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

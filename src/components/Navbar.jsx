@@ -18,6 +18,12 @@ const Navbar = () => {
     setShowSearch(false); // hide input after search
   };
 
+    const toggleSearch = () => {
+    if (showSearch) {
+      setSearchQuery('')
+    }
+    setShowSearch(!showSearch)
+  }
   return (
     <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -47,61 +53,57 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Right Icons */}
-        <div className="flex items-center space-x-4">
-          {/* Search Icon */}
-          {!showSearch && (
-            <button
-              onClick={() => setShowSearch(true)}
-              className="bg-orange-100 p-2 rounded-full hover:bg-orange-200 transition"
-            >
-              <FiSearch size={18} className="text-gray-800" />
-            </button>
-          )}
+    <div className="flex items-center relative space-x-3">
+      {/* Toggle Button (Search or Close icon) */}
+      <button
+        onClick={toggleSearch}
+        className="bg-orange-100 p-2 rounded-full hover:bg-orange-200 transition"
+      >
+        {showSearch ? (
+          <IoClose size={20} className="text-gray-800" />
+        ) : (
+          <FiSearch size={20} className="text-gray-800" />
+        )}
+      </button>
 
-          {/* Hamburger Menu Icon */}
+      {/* Sliding Search Input */}
+      <div
+        className={`absolute right-16 md:right-12 top-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out ${
+          showSearch ? 'opacity-100 scale-x-100 w-55 sm:w-72' : 'opacity-0 scale-x-0 w-0'
+        } origin-left`}
+      >
+        <form
+          onSubmit={handleSearchSubmit}
+          className="flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm"
+        >
+          <input
+            type="text"
+            className="flex-1 px-3 py-2 text-sm outline-none"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            autoFocus={showSearch}
+          />
           <button
-            className="md:hidden text-gray-800 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            type="submit"
+            className="bg-orange-500 text-white  px-2 sm:px-4 py-2 hover:bg-orange-600"
           >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            Go
           </button>
-        </div>
+        </form>
       </div>
+      {/* Hamburger Menu Icon */}
+        <button
+          className="md:hidden text-gray-800 focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
+          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+      </div>
+    </div>
 
-      {/* Search Bar Overlay */}
-      {showSearch && (
-        <div className="w-full px-6 pb-4 md:pb-6">
-          <form
-            onSubmit={handleSearchSubmit}
-            className="flex items-center max-w-xl mx-auto mt-2 md:mt-0  rounded-lg overflow-hidden shadow-lg bg-white"
-          >
-            <input
-              type="text"
-              className="flex-1 px-4 py-2 text-sm outline-none"
-              placeholder="Search for pet accessories..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              autoFocus
-            />
-            <button
-              type="submit"
-              className="bg-orange-500 text-white px-5 py-3 rounded hover:bg-orange-600"
-            >
-              Search
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowSearch(false)}
-              className="px-3 text-gray-400 hover:text-orange-500"
-              aria-label="Close search"
-            >
-              <IoClose size={22} />
-            </button>
-          </form>
-        </div>
-      )}
+
 
       {/* Mobile Dropdown Menu */}
       <div

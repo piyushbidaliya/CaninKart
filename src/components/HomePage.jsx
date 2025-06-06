@@ -91,7 +91,7 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div className="font-sans text-gray-800">
+    <div className="font-sans text-gray-800 max-w-7xl mx-auto">
       {/* Hero Section */}
       <section className="bg-orange-100 md:relative overflow-hidden px-4 py-20 text-center flex flex-col items-center mt-16">
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -160,7 +160,7 @@ const HomePage = () => {
       </section>
 
       {/* Promo Banner */}
-      <div className="w-full max-w-8xl mx-auto px-8 ">
+      <div className="w-full max-w-8xl mx-auto">
         <img src={img96 || "/placeholder.svg"} alt="Product" className="w-full h-auto object-contain hidden md:flex" />
         
         <img src={img99 || "/placeholder.svg"} alt="Product" className="w-full h-auto object-contain md:hidden py-4" />

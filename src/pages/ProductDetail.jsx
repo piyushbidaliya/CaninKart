@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="bg-[#F1FFEF] flex flex-col p-4 sm:p-6 md:px-32 relative top-18">
+      <div className="bg-[#F1FFEF] flex flex-col p-4 sm:p-6 md:px-32 relative top-18 max-w-7xl mx-auto">
         {/* Back Button */}
         <button
           className="text-sm font-bold text-gray-600 hover:text-[16px] w-fit"
@@ -102,7 +102,9 @@ const ProductDetail = () => {
       </div>
 
       {/* Contact Form */}
-      <ContactForm />
+      <div className='mt-18'>
+        <ContactForm />
+      </div>
     </>
   );
 };
