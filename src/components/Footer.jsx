@@ -111,10 +111,7 @@ const Footer = () => {
       <p className="mt-6 text-center text-xs text-gray-500">
         © 2025 Caninkart. All rights reserved.
       </p>
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-orange-600 
-  transition-all  duration-300 hover:bg-orange-100 cursor-pointer ease-in hover:scale-110">
-  <FaFacebookF className="text-orange-600 transform transition-transform duration-300 ease-in hover:scale-110" />
-</div>
+      
 
 
     </footer>
