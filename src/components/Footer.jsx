@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6"; // Importing X icon
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t mt-10 text-sm px-4 py-10">
+    <footer className="bg-white border-t md:mt-10 text-sm px-4 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
@@ -73,19 +73,19 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="cursor-pointer ">
           <h4 className="font-semibold mb-2 text-black">Contact Us</h4>
-          <p className="flex items-center gap-2 text-gray-700 ">
+          <div className="flex items-center gap-2 text-gray-700 ">
             {/* <FiMail className="text-orange-600" />  */}
             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer">
               <FiMail className="text-lg" />
             </div>
             <span className="hover:text-orange-400">support@caninkart.com</span>
-          </p>
-          <p className="flex items-center gap-2 mt-2 text-gray-700">
+          </div>
+          <div className="flex items-center gap-2 mt-2 text-gray-700">
             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer">
               <FiPhone className="text-lg" />
             </div>
            <span className="hover:text-orange-400"> +91 95029 57250 </span>
-          </p>
+          </div>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
           <div
             key={idx}
             aria-label={item.label}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer hover:text-blue-400"
           >
             {item.icon}
           </div>
