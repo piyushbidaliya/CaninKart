@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="bg-white border-t md:mt-10 text-sm px-4 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
-        <div>
+        <div className="">
           <img src={logo1} alt="Caninkart" className="h-10 mb-3" />
           <p className="text-gray-700 leading-relaxed">
             Caninkart is a highly reputable manufacturer and exporter of pet
@@ -71,26 +71,35 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="cursor-pointer ">
-          <h4 className="font-semibold mb-2 text-black">Contact Us</h4>
-          <div className="flex items-center gap-2 text-gray-700 ">
-            {/* <FiMail className="text-orange-600" />  */}
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer">
-              <FiMail className="text-lg" />
+        <div className="cursor-pointer">
+          <h4 className="font-semibold mb-2 text-black text-base sm:text-lg">
+            Contact Us
+          </h4>
+
+          {/* Email */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-700 mb-3">
+            <div className="md:w-10 md:h-10 w-7 h-7 flex items-center justify-center rounded-full bg-[#FDDF82] transition shrink-0">
+              <FiMail className="md:text-lg text-sm" />
             </div>
-            <span className="hover:text-orange-400">support@caninkart.com</span>
+            <span className="hover:text-orange-400 text-sm md:text-base break-all">
+              support@caninkart.com
+            </span>
           </div>
-          <div className="flex items-center gap-2 mt-2 text-gray-700">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FDDF82] transition cursor-pointer">
-              <FiPhone className="text-lg" />
+
+          {/* Phone */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-700">
+            <div className="md:w-10 md:h-10 w-7 h-7 flex items-center justify-center rounded-full bg-[#FDDF82] transition shrink-0">
+              <FiPhone className="md:text-lg text-sm" />
             </div>
-           <span className="hover:text-orange-400"> +91 95029 57250 </span>
+            <span className="hover:text-orange-400 text-sm md:text-base">
+              +91 95029 57250
+            </span>
           </div>
         </div>
       </div>
 
       {/* Social Icons */}
-      <div className="mt-8 flex justify-center gap-6 text-xl ">
+      <div className="mt-8 flex justify-center gap-6 text-xl  ">
         {[
           { icon: <FaFacebookF />, label: "Facebook" },
           { icon: <FaInstagram />, label: "Instagram" },
@@ -111,9 +120,6 @@ const Footer = () => {
       <p className="mt-6 text-center text-xs text-gray-500">
         © 2025 Caninkart. All rights reserved.
       </p>
-      
-
-
     </footer>
   );
 };
