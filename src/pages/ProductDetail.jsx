@@ -20,10 +20,10 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="bg-[#F1FFEF] flex flex-col p-4 sm:p-6 md:px-16 relative top-18">
+      <div className="bg-[#F1FFEF] flex flex-col p-4 sm:p-6 md:px-32 relative top-18">
         {/* Back Button */}
         <button
-          className="text-sm text-gray-600 hover:text-[16px] w-fit"
+          className="text-sm font-bold text-gray-600 hover:text-[16px] w-fit"
           onClick={() => navigate(-1)}
         >
           &larr; BACK
@@ -39,7 +39,7 @@ const ProductDetail = () => {
                 src={img}
                 alt={`Thumbnail ${index + 1}`}
                 onClick={() => setSelectedImage(img)}
-                className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md cursor-pointer hover:ring-2 ring-gray-400 bg-white p-1"
+                className="w-20 h-20 sm:w-32 sm:h-28 object-contain rounded-md cursor-pointer hover:ring-2 ring-gray-400 bg-white p-1"
               />
             ))}
           </div>
@@ -55,14 +55,14 @@ const ProductDetail = () => {
             </div>
 
             {/* Mobile: Horizontal thumbnails */}
-            <div className="flex md:hidden gap-3 overflow-x-auto py-2 px-1">
+            <div className="flex md:hidden gap-3 overflow-x-auto  py-2 px-3">
               {images.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={`Thumbnail ${index + 1}`}
                   onClick={() => setSelectedImage(img)}
-                  className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-md cursor-pointer hover:ring-2 ring-gray-400 bg-white p-1 shrink-0"
+                  className="w-32 h-28 sm:w-24 sm:h-24 object-contain rounded-md cursor-pointer hover:ring-2 ring-gray-400 bg-white p-1 shrink-0"
                 />
               ))}
             </div>
